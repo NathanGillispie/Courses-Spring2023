@@ -1,1 +1,1 @@
-Dude like this class sucks for real
+Dude like this class is awesome for real.

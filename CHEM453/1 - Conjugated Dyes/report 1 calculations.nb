@@ -1,0 +1,459 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     15734,        451]
+NotebookOptionsPosition[     11330,        368]
+NotebookOutlinePosition[     11788,        385]
+CellTagsIndexPosition[     11745,        382]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"6.62607015*^-34", "*", "299792458"}]], "Input",
+ CellLabel->"In[55]:=",ExpressionUUID->"81522acf-72ea-4bc1-9f64-2cb39768c216"],
+
+Cell[BoxData["1.9864458571489286`*^-25"], "Output",
+ CellLabel->"Out[55]=",ExpressionUUID->"d7d95506-fe74-4c81-a0b9-20d06e7caad5"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+   "Units", " ", "of", " ", "energy", " ", "are", " ", "in", " ", "Joules"}], 
+   "*)"}], "\n", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"energies", "[", "data_", "]"}], ":=", 
+    RowBox[{"6.62607015*^-34", "*", 
+     RowBox[{"299792458", "/", 
+      RowBox[{"(", 
+       RowBox[{"data", "/", 
+        RowBox[{"10", "^", "9"}]}], ")"}]}]}]}], "\n", 
+   RowBox[{"(*", 
+    RowBox[{"Units", " ", "of", " ", "meters", " ", "I", " ", "believe"}], 
+    "*)"}], "\n", 
+   RowBox[{
+    RowBox[{"boxLength", "[", 
+     RowBox[{"energy_", ",", "n_"}], "]"}], ":=", 
+    RowBox[{"Sqrt", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", "6.62607015*^-34", ")"}], "^", "2"}], "*", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"n", "+", "1"}], ")"}], "/", 
+       RowBox[{"(", 
+        RowBox[{"8", "*", "9.1093837*^-31", "*", "energy"}], ")"}]}]}], 
+     "]"}]}]}]}]], "Input",
+ InitializationCell->True,
+ CellLabel->"In[1]:=",ExpressionUUID->"0bcae474-4c6a-416b-bf67-c0e9df4cc9e3"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "1",
+ ",",
+ StyleBox["1\[CloseCurlyQuote]-diethyl-2",
+  IgnoreSpellCheck->True],
+ ",",
+ StyleBox["2\[CloseCurlyQuote]-cyanine",
+  IgnoreSpellCheck->True],
+ " ",
+ "iodide",
+ " ",
+ "(",
+ "N",
+ "=",
+ "4",
+ ")"
+}], "Section",ExpressionUUID->"2f8dd832-850f-4956-af91-fe50978e810e"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{
+    "Units", " ", "here", " ", "are", " ", "listed", " ", "in", " ", 
+     "nanometers"}], ",", " ", "nm"}], "*)"}], "\n", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"experimentalData", "=", "527"}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"experimentalUncertainties", "=", "2"}], ";"}]}]}]], "Input",
+ CellLabel->"In[61]:=",ExpressionUUID->"ba205d6b-5812-4725-8b1e-2e20ffad1e87"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"errorDetermination", "=", 
+  RowBox[{"experimentalData", "-", "experimentalUncertainties"}]}]], "Input",
+ CellLabel->"In[63]:=",ExpressionUUID->"77d4a23c-d632-4c14-8430-f41c6711afa2"],
+
+Cell[BoxData["525"], "Output",
+ CellLabel->"Out[63]=",ExpressionUUID->"296cd2e4-c881-4eae-bec8-9c4607c04895"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"energies", "[", "experimentalData", "]"}], "\n", 
+ RowBox[{
+  RowBox[{"energies", "[", "errorDetermination", "]"}], "-", 
+  RowBox[{"energies", "[", "experimentalData", "]"}]}]}], "Input",
+ CellLabel->"In[64]:=",ExpressionUUID->"47af0c60-6d7b-4dd2-b696-1efb8b73aaa7"],
+
+Cell[BoxData["3.769346977512199`*^-19"], "Output",
+ CellLabel->"Out[64]=",ExpressionUUID->"8e71719b-0688-48f4-ab7a-5d116d6b4a85"],
+
+Cell[BoxData["1.4359417057189219`*^-21"], "Output",
+ CellLabel->"Out[65]=",ExpressionUUID->"2b54bd42-8d76-40b4-94a8-b4c81c7517f1"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+   "assuming", " ", "ascending", " ", "order", " ", "of", " ", "wavelength"}],
+    "*)"}], "\n", 
+  RowBox[{
+   RowBox[{"boxLength", "[", 
+    RowBox[{
+     RowBox[{"energies", "[", "experimentalData", "]"}], ",", "4"}], "]"}], 
+   "\n", 
+   RowBox[{
+    RowBox[{"boxLength", "[", 
+     RowBox[{
+      RowBox[{"energies", "[", "experimentalData", "]"}], ",", "4"}], "]"}], 
+    "-", 
+    RowBox[{"boxLength", "[", 
+     RowBox[{
+      RowBox[{"energies", "[", "errorDetermination", "]"}], ",", "4"}], 
+     "]"}]}]}]}]], "Input",
+ CellLabel->"In[66]:=",ExpressionUUID->"3de5a2c1-4948-4d7f-9bd1-d616be11045a"],
+
+Cell[BoxData["8.939608128983273`*^-10"], "Output",
+ CellLabel->"Out[66]=",ExpressionUUID->"c0eb9b0d-599d-41c1-85f0-54b0dd25e602"],
+
+Cell[BoxData["1.6979328013320195`*^-12"], "Output",
+ CellLabel->"Out[67]=",ExpressionUUID->"0f4542c5-bbf0-47d6-857b-df7150810fca"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"boxLength", "[", 
+   RowBox[{
+    RowBox[{"energies", "[", "experimentalData", "]"}], ",", "6"}], "]"}], 
+  "*", 
+  RowBox[{"1*^10", "/", "4"}]}], "\n", 
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"boxLength", "[", 
+     RowBox[{
+      RowBox[{"energies", "[", "experimentalData", "]"}], ",", "6"}], "]"}], 
+    "-", 
+    RowBox[{"boxLength", "[", 
+     RowBox[{
+      RowBox[{"energies", "[", "errorDetermination", "]"}], ",", "6"}], 
+     "]"}]}], ")"}], "*", 
+  RowBox[{"1*^10", "/", "4"}]}]}], "Input",
+ CellLabel->"In[68]:=",ExpressionUUID->"007ddd00-8707-497c-aadb-794cce2059ee"],
+
+Cell[BoxData["2.6443717460355467`"], "Output",
+ CellLabel->"Out[68]=",ExpressionUUID->"3ffbfd30-058a-4e8e-8ec9-e6cca880e041"],
+
+Cell[BoxData["0.005022552959511234`"], "Output",
+ CellLabel->"Out[69]=",ExpressionUUID->"4e629856-9f2e-4b97-83ea-811f5d574785"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["1,1\[CloseCurlyQuote]-diethyl-2,2\[CloseCurlyQuote]-carbocyanine iodide \
+(N=6)", "Section",ExpressionUUID->"0366a962-aee0-487c-a0c0-9f66c79f37fb"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{
+    "Units", " ", "here", " ", "are", " ", "listed", " ", "in", " ", 
+     "nanometers"}], ",", " ", "nm"}], "*)"}], "\n", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"experimentalData", "=", "596.4"}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"experimentalUncertainties", "=", "1"}], ";"}]}]}]], "Input",
+ CellLabel->"In[28]:=",ExpressionUUID->"0b0fcab3-daf4-4639-8846-2b9d9ab4e2b9"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"errorDetermination", "=", 
+  RowBox[{"experimentalData", "-", "experimentalUncertainties"}]}]], "Input",
+ CellLabel->"In[30]:=",ExpressionUUID->"3b879bad-3e6e-4186-ab1f-d4c212e0d1f7"],
+
+Cell[BoxData["595.4`"], "Output",
+ CellLabel->"Out[30]=",ExpressionUUID->"96906df5-6c34-4baf-9d09-85b53262de86"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"energies", "[", "experimentalData", "]"}], "\n", 
+ RowBox[{
+  RowBox[{"energies", "[", "errorDetermination", "]"}], "-", 
+  RowBox[{"energies", "[", "experimentalData", "]"}]}]}], "Input",
+ CellLabel->"In[31]:=",ExpressionUUID->"fbfe8143-4b5c-47fb-8fc8-3fafa1d14e26"],
+
+Cell[BoxData["3.330727460008264`*^-19"], "Output",
+ CellLabel->"Out[31]=",ExpressionUUID->"6694db67-a37d-486d-b040-b4ad3879781b"],
+
+Cell[BoxData["5.594100537467405`*^-22"], "Output",
+ CellLabel->"Out[32]=",ExpressionUUID->"0989f784-9efa-47af-a7ec-18cc17aff8f4"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+   "assuming", " ", "ascending", " ", "order", " ", "of", " ", "wavelength"}],
+    "*)"}], "\n", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"boxLength", "[", 
+     RowBox[{
+      RowBox[{"energies", "[", "experimentalData", "]"}], ",", "6"}], "]"}], 
+    "*", "1*^10"}], "\n", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"boxLength", "[", 
+       RowBox[{
+        RowBox[{"energies", "[", "experimentalData", "]"}], ",", "6"}], "]"}],
+       "-", 
+      RowBox[{"boxLength", "[", 
+       RowBox[{
+        RowBox[{"energies", "[", "errorDetermination", "]"}], ",", "6"}], 
+       "]"}]}], ")"}], "*", "1*^10"}]}]}]], "Input",
+ CellLabel->"In[39]:=",ExpressionUUID->"462350ec-5602-4da5-a11f-104528f5be63"],
+
+Cell[BoxData["11.252421953807394`"], "Output",
+ CellLabel->"Out[39]=",ExpressionUUID->"57769b29-223e-40f8-bd61-4aa369b60523"],
+
+Cell[BoxData["0.009437577735048266`"], "Output",
+ CellLabel->"Out[40]=",ExpressionUUID->"5002ec42-3d57-4029-a917-3a20ef0febb0"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["1,1\[CloseCurlyQuote]-diethyl-2,2\[CloseCurlyQuote]-dicarbocyanine \
+iodide (N=8)", "Section",ExpressionUUID->"3a6c016c-9c03-44ff-8f1d-\
+352b1a9de230"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{
+    "Units", " ", "here", " ", "are", " ", "listed", " ", "in", " ", 
+     "nanometers"}], ",", " ", "nm"}], "*)"}], "\n", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"experimentalData", "=", "692.0"}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"experimentalUncertainties", "=", "1.0"}], ";"}]}]}]], "Input",
+ CellLabel->"In[48]:=",ExpressionUUID->"ca0c095e-5bdc-4d3e-8a51-e2b5f62d23f7"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"errorDetermination", "=", 
+  RowBox[{"experimentalData", "-", "experimentalUncertainties"}]}]], "Input",
+ CellLabel->"In[50]:=",ExpressionUUID->"c1da7ca4-b439-46c1-8d81-3cb194c8c77c"],
+
+Cell[BoxData["691.`"], "Output",
+ CellLabel->"Out[50]=",ExpressionUUID->"dfcfe2bb-cc8b-4524-9c72-2d708c96f360"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"energy", " ", "and", " ", "uncertainty"}], "*)"}], "\n", 
+  RowBox[{
+   RowBox[{"energies", "[", "experimentalData", "]"}], "\n", 
+   RowBox[{
+    RowBox[{"energies", "[", "errorDetermination", "]"}], "-", 
+    RowBox[{"energies", "[", "experimentalData", "]"}]}]}]}]], "Input",
+ CellLabel->"In[51]:=",ExpressionUUID->"afccb89b-d493-4a8a-95f1-cc161fb962b7"],
+
+Cell[BoxData["2.8705864987701284`*^-19"], "Output",
+ CellLabel->"Out[51]=",ExpressionUUID->"f6b9c54b-7cbd-4720-a2c8-95884e6cc2b9"],
+
+Cell[BoxData["4.154249636425197`*^-22"], "Output",
+ CellLabel->"Out[52]=",ExpressionUUID->"45522535-6a9c-4f35-a8ea-238bddf43a87"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+   "assuming", " ", "ascending", " ", "order", " ", "of", " ", "wavelength"}],
+    "*)"}], "\n", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"boxLength", "[", 
+     RowBox[{
+      RowBox[{"energies", "[", "experimentalData", "]"}], ",", "8"}], "]"}], 
+    "*", "1*^10"}], "\n", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"boxLength", "[", 
+       RowBox[{
+        RowBox[{"energies", "[", "experimentalData", "]"}], ",", "8"}], "]"}],
+       "-", 
+      RowBox[{"boxLength", "[", 
+       RowBox[{
+        RowBox[{"energies", "[", "errorDetermination", "]"}], ",", "8"}], 
+       "]"}]}], ")"}], "*", "1*^10"}]}]}]], "Input",
+ CellLabel->"In[53]:=",ExpressionUUID->"d7e7c7cc-70c9-4016-a5c8-6edec30bb77b"],
+
+Cell[BoxData["13.743662252565073`"], "Output",
+ CellLabel->"Out[53]=",ExpressionUUID->"3250948e-9f00-4cd4-bde7-7994c03d98a2"],
+
+Cell[BoxData["0.009933981964795629`"], "Output",
+ CellLabel->"Out[54]=",ExpressionUUID->"6ea83797-d839-41d5-ac90-2c8db6be2dd3"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"-", "36.4"}], "-", "26.2", "-", "19.5"}], ")"}], "/", 
+  "3"}]], "Input",
+ CellLabel->"In[70]:=",ExpressionUUID->"7d5d77e1-667c-443c-a2bf-d056ed9ee971"],
+
+Cell[BoxData[
+ RowBox[{"-", "27.366666666666664`"}]], "Output",
+ CellLabel->"Out[70]=",ExpressionUUID->"af7e8029-f035-4ec0-a043-8286d1238782"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{766.8, 789.5999999999999},
+WindowMargins->{{Automatic, -4.7999999999999545`}, {Automatic, 0}},
+Magnification:>1.1,
+FrontEndVersion->"13.1 for Microsoft Windows (64-bit) (August 22, 2022)",
+StyleDefinitions->"ReverseColor.nb",
+ExpressionUUID->"231c4579-992d-406f-8f3d-e175acecdbfa"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 150, 2, 31, "Input",ExpressionUUID->"81522acf-72ea-4bc1-9f64-2cb39768c216"],
+Cell[733, 26, 130, 1, 36, "Output",ExpressionUUID->"d7d95506-fe74-4c81-a0b9-20d06e7caad5"]
+}, Open  ]],
+Cell[878, 30, 1033, 31, 134, "Input",ExpressionUUID->"0bcae474-4c6a-416b-bf67-c0e9df4cc9e3",
+ InitializationCell->True],
+Cell[CellGroupData[{
+Cell[1936, 65, 293, 16, 74, "Section",ExpressionUUID->"2f8dd832-850f-4956-af91-fe50978e810e"],
+Cell[2232, 83, 437, 12, 73, "Input",ExpressionUUID->"ba205d6b-5812-4725-8b1e-2e20ffad1e87"],
+Cell[CellGroupData[{
+Cell[2694, 99, 207, 3, 31, "Input",ExpressionUUID->"77d4a23c-d632-4c14-8430-f41c6711afa2"],
+Cell[2904, 104, 109, 1, 35, "Output",ExpressionUUID->"296cd2e4-c881-4eae-bec8-9c4607c04895"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3050, 110, 292, 5, 52, "Input",ExpressionUUID->"47af0c60-6d7b-4dd2-b696-1efb8b73aaa7"],
+Cell[3345, 117, 129, 1, 36, "Output",ExpressionUUID->"8e71719b-0688-48f4-ab7a-5d116d6b4a85"],
+Cell[3477, 120, 130, 1, 36, "Output",ExpressionUUID->"2b54bd42-8d76-40b4-94a8-b4c81c7517f1"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3644, 126, 661, 20, 94, "Input",ExpressionUUID->"3de5a2c1-4948-4d7f-9bd1-d616be11045a"],
+Cell[4308, 148, 129, 1, 36, "Output",ExpressionUUID->"c0eb9b0d-599d-41c1-85f0-54b0dd25e602"],
+Cell[4440, 151, 130, 1, 36, "Output",ExpressionUUID->"0f4542c5-bbf0-47d6-857b-df7150810fca"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4607, 157, 628, 19, 73, "Input",ExpressionUUID->"007ddd00-8707-497c-aadb-794cce2059ee"],
+Cell[5238, 178, 125, 1, 35, "Output",ExpressionUUID->"3ffbfd30-058a-4e8e-8ec9-e6cca880e041"],
+Cell[5366, 181, 127, 1, 35, "Output",ExpressionUUID->"4e629856-9f2e-4b97-83ea-811f5d574785"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5542, 188, 153, 1, 74, "Section",ExpressionUUID->"0366a962-aee0-487c-a0c0-9f66c79f37fb"],
+Cell[5698, 191, 439, 12, 73, "Input",ExpressionUUID->"0b0fcab3-daf4-4639-8846-2b9d9ab4e2b9"],
+Cell[CellGroupData[{
+Cell[6162, 207, 207, 3, 31, "Input",ExpressionUUID->"3b879bad-3e6e-4186-ab1f-d4c212e0d1f7"],
+Cell[6372, 212, 112, 1, 35, "Output",ExpressionUUID->"96906df5-6c34-4baf-9d09-85b53262de86"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6521, 218, 292, 5, 52, "Input",ExpressionUUID->"fbfe8143-4b5c-47fb-8fc8-3fafa1d14e26"],
+Cell[6816, 225, 129, 1, 36, "Output",ExpressionUUID->"6694db67-a37d-486d-b040-b4ad3879781b"],
+Cell[6948, 228, 129, 1, 36, "Output",ExpressionUUID->"0989f784-9efa-47af-a7ec-18cc17aff8f4"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7114, 234, 764, 23, 94, "Input",ExpressionUUID->"462350ec-5602-4da5-a11f-104528f5be63"],
+Cell[7881, 259, 125, 1, 35, "Output",ExpressionUUID->"57769b29-223e-40f8-bd61-4aa369b60523"],
+Cell[8009, 262, 127, 1, 35, "Output",ExpressionUUID->"5002ec42-3d57-4029-a917-3a20ef0febb0"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8185, 269, 157, 2, 74, "Section",ExpressionUUID->"3a6c016c-9c03-44ff-8f1d-352b1a9de230"],
+Cell[8345, 273, 441, 12, 73, "Input",ExpressionUUID->"ca0c095e-5bdc-4d3e-8a51-e2b5f62d23f7"],
+Cell[CellGroupData[{
+Cell[8811, 289, 207, 3, 31, "Input",ExpressionUUID->"c1da7ca4-b439-46c1-8d81-3cb194c8c77c"],
+Cell[9021, 294, 111, 1, 35, "Output",ExpressionUUID->"dfcfe2bb-cc8b-4524-9c72-2d708c96f360"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9169, 300, 410, 9, 73, "Input",ExpressionUUID->"afccb89b-d493-4a8a-95f1-cc161fb962b7"],
+Cell[9582, 311, 130, 1, 36, "Output",ExpressionUUID->"f6b9c54b-7cbd-4720-a2c8-95884e6cc2b9"],
+Cell[9715, 314, 129, 1, 36, "Output",ExpressionUUID->"45522535-6a9c-4f35-a8ea-238bddf43a87"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9881, 320, 764, 23, 94, "Input",ExpressionUUID->"d7e7c7cc-70c9-4016-a5c8-6edec30bb77b"],
+Cell[10648, 345, 125, 1, 35, "Output",ExpressionUUID->"3250948e-9f00-4cd4-bde7-7994c03d98a2"],
+Cell[10776, 348, 127, 1, 35, "Output",ExpressionUUID->"6ea83797-d839-41d5-ac90-2c8db6be2dd3"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10940, 354, 217, 6, 31, "Input",ExpressionUUID->"7d5d77e1-667c-443c-a2bf-d056ed9ee971"],
+Cell[11160, 362, 142, 2, 35, "Output",ExpressionUUID->"af7e8029-f035-4ec0-a043-8286d1238782"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

@@ -1,5 +1,5 @@
-# Courses-Fall2022
-Work and description of assignments for my sixth semester at WKU
+# Courses-Spring2023
+Work and description of assignments for my eighth semester at WKU
 
 ## Motivation
 
@@ -11,4 +11,4 @@ Each folder is a class, each readme may contain important information such as me
 
 ## Classes
 
-The classes taken include Physics 2 + Lab, Physical Chemistry + Lab and Undergraduate Chemistry Seminar.
+The classes taken include Physical chemistry 2 + lab, History of Sexuality, Biochemistry, and Food Laws and Regulations.
